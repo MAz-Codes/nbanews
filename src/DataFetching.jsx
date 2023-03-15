@@ -10,11 +10,12 @@ function DataFetching() {
   useEffect(() => {
     const fetchArticles = async () => {
       const apiKey = "1934b2c0fbe6483fa57df759884e592d"
-      const url = `https://newsapi.org/v2/everything?q=nba +basketball +ball -Men's -sneaker&language=en&apiKey=${apiKey}&sortBy=publishedAt`;
+      const url = `https://newsapi.org/v2/everything?q=nba +basketball +ball -cuse -Men's -sneaker&language=en&apiKey=${apiKey}&sortBy=publishedAt`;
 
       try {
         const response = await axios.get(url);
         setArticles(response.data.articles);
+        console.log(response.data)
       } catch (error) {
         console.error(error);
       }
